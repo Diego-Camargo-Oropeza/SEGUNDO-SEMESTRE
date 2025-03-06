@@ -10,9 +10,10 @@ int main()
     linear_list<string> l(5);
     linear_list<Student> s(3);
 
-    s.push_back(Student("Diego", 50, 2));
-    s.push_back(Student("Miguel", 10, 2));
-    s.push_back(Student("Manuel", 30, 3));
+    //Manual pushback debugging matter only
+    // l.push_back(Student("Diego", 50, 2));
+    // l.push_back(Student("Miguel", 10, 2));
+    // l.push_back(Student("Manuel", 30, 3));
 
     while (dec != 0)
     {
@@ -34,49 +35,49 @@ int main()
         {
         case 1:
             cout << "Reading all data...\n";
-            l.read();
+            s.read();
             system("pause");
             system("cls");
             break;
         case 2:
             cout << "Inserting one element...\n";
-            l.insert_element();
+            s.insert_element();
             system("pause");
             system("cls");
             break;
         case 3:
             cout << "Printing list...\n";
-            l.print();
+            s.print();
             system("pause");
             system("cls");
             break;
         case 4:
             cout << "Printing element at a given position...\n";
-            l.print_element();
+            s.print_element();
             system("pause");
             system("cls");
             break;
         case 5:
             cout << "Searching element...\n";
-            l.search_element();
+            s.search_element();
             system("pause");
             system("cls");
             break;
         case 6:
             cout << "Inserting element...\n";
-            l.insert_into();
+            s.insert_into();
             system("pause");
             system("cls");
             break;
         case 7:
             cout << "Deleting element...\n";
-            l.delete_element();
+            s.delete_element();
             system("pause");
             system("cls");
             break;
         case 8:
             cout << "Deleting...\n";
-            l.delete_list();
+            s.delete_list();
             system("pause");
             system("cls");
             break;

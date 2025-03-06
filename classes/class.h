@@ -190,7 +190,7 @@ public:
         cout << "Sorting by selecting: \n";
         for (int i = 0; i < (n - 1); i++)
         {
-            // cout << i + 1 << ".interation \n";
+            cout << i + 1 << ".interation \n";
             T lowest = linear_l[i];
             int pos = i;
             for (int j = (i + 1); j < n; j++)
