@@ -82,6 +82,32 @@ public:
             cout << "Empty List\n";
         }
     }
+
+    void delete_last()
+    {
+        if (header != NULL)
+        {
+
+            if (header->link == NULL)
+            {
+                delete_first();
+            }
+            else
+            {
+                node *aux = header;
+                node *aux2 = new node;
+                while (aux->link != NULL)
+                    aux = aux->link;
+                aux2->link = NULL;
+                cout << "Deleting: " << aux->data << endl;
+                delete aux2;
+            }
+        }
+        else
+        {
+            cout << "Empty list\n";
+        }
+    }
 };
 // Linked lists
 int main()
@@ -102,6 +128,11 @@ int main()
     l.print();
 
     l.delete_first();
+
+    l.print();
+
+    l.delete_last();
+    l.delete_last();
 
     l.print();
     return 0;
