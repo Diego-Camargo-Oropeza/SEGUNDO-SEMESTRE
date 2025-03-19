@@ -45,7 +45,7 @@ public:
         node *n = new node;
         cout << "Enter data: ";
         cin >> n->data;
-        n->link = header;
+        n->link = header; 
         header = n;
     }
 
