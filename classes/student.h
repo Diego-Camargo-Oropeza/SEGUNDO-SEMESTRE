@@ -7,73 +7,67 @@ class Student
 private:
     string name;
     string lastname;
-    int age;
-    int semester;
+    string secondlastname;
+    int account;
 
 public:
-    Student() : name(""), lastname(""), age(0), semester(0) {}
-    Student(string n, string l, int a, int sem) : name(n), lastname(l), age(a), semester(sem) {}
-
-    string get_name()
+    Student()
     {
-        return name;
+        name = "";
+        lastname = "";
+        secondlastname = "";
+        account = 0;
     }
-
-    string get_lastname()
+    Student(string n, string l, string s, int a)
     {
-        return lastname;
-    }
-
-    int get_age()
-    {
-        return age;
-    }
-
-    int get_semester()
-    {
-        return semester;
+        this->name = n;
+        this->lastname = l;
+        this->secondlastname = s;
+        this->account = a;
     }
 
     bool operator<(const Student &other)
     {
-        if (name < other.name)
+        if (lastname < other.lastname)
         {
             return true;
         }
 
-        if (name == other.name && age < other.age)
+        if (lastname == other.lastname && secondlastname < other.secondlastname)
         {
             return true;
         }
 
-        if (name == other.name && age == other.age && lastname < other.lastname)
+        if (lastname == other.lastname && secondlastname == other.secondlastname && name < other.name)
         {
             return true;
         }
 
-        if (name == other.name && age == other.age && lastname == other.lastname && semester < other.semester)
+        if (lastname == other.lastname && secondlastname == other.secondlastname && name == other.name && account < other.account)
         {
             return true;
         }
 
-        if (name == other.name && lastname == other.lastname && age == other.age && semester == other.semester)
+        if (lastname == other.lastname && secondlastname == other.secondlastname && name == other.name && account == other.account)
         {
             return true;
         }
         return false;
     }
 
+    // Overriding equality operator is necessary if we want to keep the search option working
     bool operator==(const Student &other)
     {
-        if (name == other.name && lastname == other.lastname && age == other.age && semester == other.semester)
+        if (lastname == other.lastname && secondlastname == other.secondlastname && name == other.name && account == other.account)
         {
             return true;
         }
         return false;
     }
+
     friend ostream &operator<<(ostream &os, const Student &s)
     {
-        os << s.name << s.lastname << ": (age: " << s.age << ", semester: " << s.semester << ")";
+        os << s.name << " " << s.lastname << " " << s.secondlastname << ": (account number: " << s.account << ")";
         return os;
     }
 
@@ -83,10 +77,11 @@ public:
         is >> s.name;
         cout << "Enter student's lastname: ";
         is >> s.lastname;
-        cout << "Enter student's age: ";
-        is >> s.age;
-        cout << "Enter student's semester";
-        is >> s.semester;
+        cout << "Enter student's second lastname: ";
+        is >> s.secondlastname;
+        cout << "Enter student's account number: ";
+        is >> s.account;
+        cout << endl;
         return is;
     }
 };

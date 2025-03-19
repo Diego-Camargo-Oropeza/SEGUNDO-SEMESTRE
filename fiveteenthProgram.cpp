@@ -113,8 +113,9 @@ int main()
 {
     // cout << "Enter list's size: ";
     // cin >> n;
-    const int N = 500;
+    const int N = 30000;
     int *original = new int[N];
+    int *aux = new int[N];
     for (int i = 0; i < N; ++i)
     {
         original[i] = (rand() % N) + 1;
@@ -128,23 +129,23 @@ int main()
     a.swap_sort();
     auto end = high_resolution_clock::now();
     milliseconds duration = duration_cast<milliseconds>(end - start);
-    cout << duration.count() << " miliseconds.";
+    cout << duration.count() << " miliseconds.\n";
 
     start = high_resolution_clock::now();
     b.select_sort();
     end = high_resolution_clock::now();
     duration = duration_cast<milliseconds>(end - start);
-    cout << duration.count() << " miliseconds.";
+    cout << duration.count() << " miliseconds.\n";
 
     c.insert_sort();
     end = high_resolution_clock::now();
     duration = duration_cast<milliseconds>(end - start);
-    cout << duration.count() << " miliseconds.";
+    cout << duration.count() << " miliseconds.\n";
 
     d.bubble_sort();
     end = high_resolution_clock::now();
     duration = duration_cast<milliseconds>(end - start);
-    cout << duration.count() << " miliseconds.";
+    cout << duration.count() << " miliseconds.\n";
 
     // a.swap_sort();
     // a.select_sort();

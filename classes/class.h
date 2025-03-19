@@ -22,11 +22,13 @@ public:
         delete[] linear_l;
         cout << "Destroying object...\n";
     }
+
     void read()
     {
         cout << "Please enter " << size << " data items:\n";
         for (int i = 0; i < size; i++)
         {
+            cout << "No. " << i + 1;
             cin >> linear_l[i];
         }
         n = size;

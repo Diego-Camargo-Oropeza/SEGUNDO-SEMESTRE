@@ -7,10 +7,10 @@ using namespace std;
 int main()
 {
     int dec = -1;
-    linear_list<string> l(5);
+    // linear_list<string> s(5);
     linear_list<Student> s(3);
 
-    //Manual pushback debugging matter only
+    //Manual pushback I used for testing
     // l.push_back(Student("Diego", 50, 2));
     // l.push_back(Student("Miguel", 10, 2));
     // l.push_back(Student("Manuel", 30, 3));
