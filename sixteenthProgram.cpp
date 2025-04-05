@@ -1,9 +1,11 @@
 #include <iostream>
 using namespace std;
+
 /*
 static: arrays
 dynamic: pointers
 */
+
 
 class node
 {
