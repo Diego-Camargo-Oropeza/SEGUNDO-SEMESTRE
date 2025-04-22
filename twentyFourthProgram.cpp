@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 using namespace std;
 
 class node
@@ -39,10 +40,31 @@ void posorder(node *n)
     if (n == NULL)
         return;
 
-    inorder(n->left);
-    inorder(n->right);
+    posorder(n->left);
+    posorder(n->right);
     cout << n->data << " ";
 }
+
+void levelOrder(node* n) {
+    if (n == NULL) return;
+
+    queue<node*> q;
+    q.push(n);
+
+    while (!q.empty()) {
+        node* current = q.front();
+        q.pop();
+        cout << current->data << " ";
+
+        if (current->left != NULL) {
+            q.push(current->left);
+        }
+        if (current->right != NULL) {
+            q.push(current->right);
+        }
+    }
+}
+
 
 int main()
 {
@@ -60,5 +82,8 @@ int main()
     cout << endl;
     cout << "Posorder traversal: ";
     posorder(root);
+    cout << endl;
+    cout << "Level order traversal: ";
+    levelOrder(root);
     cout << endl;
 }
