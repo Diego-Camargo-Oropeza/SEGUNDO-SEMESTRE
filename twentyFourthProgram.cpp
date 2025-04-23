@@ -16,33 +16,58 @@ public:
     }
 };
 
-void preorder(node *n)
+void preorder(node *root)
 {
-    if (n == NULL)
+    if (root == NULL)
         return;
-    cout << n->data << " ";
-    preorder(n->left);
-    preorder(n->right);
+    cout << root->data << " ";
+    preorder(root->left);
+    preorder(root->right);
 }
 
-void inorder(node *n)
+void inorder(node *root)
 {
-    if (n == NULL)
+    if (root == NULL)
         return;
 
-    inorder(n->left);
-    cout << n->data << " ";
-    inorder(n->right);
+    inorder(root->left);
+    cout << root->data << " ";
+    inorder(root->right);
 }
 
-void posorder(node *n)
+void posorder(node *root)
 {
-    if (n == NULL)
+    if (root == NULL)
         return;
 
-    posorder(n->left);
-    posorder(n->right);
-    cout << n->data << " ";
+    posorder(root->left);
+    posorder(root-s>right);
+    cout << root->data << " ";
+}
+
+void levelOrder(node *root)
+{
+    if (root == NULL)
+        return;
+
+    queue<node *> q;
+    q.push(root);
+
+    while (!q.empty())
+    {
+        node *current = q.front();
+        q.pop();
+        cout << current->data << " ";
+        if (current->left != NULL)
+        {
+            q.push(current->left);
+        }
+
+        if (current->right != NULL)
+        {
+            q.push(current->right);
+        }
+    }
 }
 
 void levelOrder(node* n) {
@@ -83,7 +108,7 @@ int main()
     cout << "Posorder traversal: ";
     posorder(root);
     cout << endl;
-    cout << "Level order traversal: ";
+    cout << "Level Order traversal: ";
     levelOrder(root);
     cout << endl;
 }
