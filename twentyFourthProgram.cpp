@@ -41,7 +41,7 @@ void posorder(node *root)
         return;
 
     posorder(root->left);
-    posorder(root-s>right);
+    posorder(root->right);
     cout << root->data << " ";
 }
 
@@ -65,26 +65,6 @@ void levelOrder(node *root)
 
         if (current->right != NULL)
         {
-            q.push(current->right);
-        }
-    }
-}
-
-void levelOrder(node* n) {
-    if (n == NULL) return;
-
-    queue<node*> q;
-    q.push(n);
-
-    while (!q.empty()) {
-        node* current = q.front();
-        q.pop();
-        cout << current->data << " ";
-
-        if (current->left != NULL) {
-            q.push(current->left);
-        }
-        if (current->right != NULL) {
             q.push(current->right);
         }
     }
